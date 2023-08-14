@@ -1,10 +1,10 @@
-def twoSum(nums, target):
-    for i in range(len(nums)):
-        for k in range(i+1, len(nums)):
-            if nums[i] + nums[k] == target:
-                return [i,k]
-
 import sys
+
+def findKthLargest(nums, k):
+    nums_list = list(map(int,nums.split(',')))
+    nums_list.remove(max(nums_list))
+    return max(nums_list)
+
 nums = sys.stdin.readline()
-target = int(sys.stdin.readline())
-print(twoSum(nums, target))
+k = int(sys.stdin.readline())
+print(findKthLargest(nums, k))
